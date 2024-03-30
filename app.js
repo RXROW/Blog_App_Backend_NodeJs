@@ -27,7 +27,7 @@ app.use(xss())
 
 // Cors Plicy
 app.use(cors({
-  origin:"http://localhost:3000"
+  origin:"https://main--escode-blog.netlify.app/"
 }))
 
 // Router
