@@ -26,10 +26,12 @@ app.use(xss())
  
 
 // Cors Plicy
-app.use(cors({
-  origin:"https://main--escode-blog.netlify.app/"
-}))
+// Allow requests from all origins
+const corsOptions = {
+  origin: '*',
+};
 
+app.use(cors(corsOptions));
 // Router
 
  app.use("/api/auth", require("./routes/authRoute"));
