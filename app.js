@@ -4,7 +4,7 @@ const dotenv = require('dotenv');  // Import dotenv module
 const { errorHandler ,notFoundErrorHandler } = require("./middlewares/erorrHandle");
 const cors = require('cors');
 const xss = require('xss-clean');
-const rateLimit = require('express-rate-limit');
+ 
  
 
 
@@ -21,16 +21,9 @@ app.use(express.json());
 // XSS protection middleware
 app.use(xss())
 
-
-const limiter = rateLimit({
-	windowMs: 15 * 60 * 1000, // 15 minutes
-	limit: 600, // Limit each IP to 100 requests per `window` (here, per 15 minutes).
  
-})
 
-// Apply the rate limiting middleware to all requests.
-app.use(limiter)
-
+ 
 
 // Cors Plicy
 app.use(cors({
